@@ -40,7 +40,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
+        shell: powershell test1.sln
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"EAquino073_ControlU_Base" /o:"eaquino073" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
           dotnet build
